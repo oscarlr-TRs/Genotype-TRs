@@ -53,7 +53,7 @@ python /sc/hydra/work/rodrio10/software/in_github/TR-DP-algorithm/pacMonStr_V1.p
   genotype_trs/${sample}/${sample}.trs  
 ```
 
-## Step 4. Collapse output from TRs
+## Step 4. Collapse output from PacMonSTR
 ```
 # input arguments
 # 1. Repeats that were genotyped
