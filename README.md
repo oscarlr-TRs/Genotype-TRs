@@ -66,7 +66,7 @@ python /sc/hydra/work/rodrio10/software/in_github/tr/python/merge_trs_from_phase
   extract_sequence/${sample}/${sample}.trs \
   extract_sequence/${sample}/${sample}.trs \
   No \
-  .8 
+  .8 > genotype_trs/${sample}/${sample}.trs.all
 ```
 
 ## Step 5. Get Z-scores 
