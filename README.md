@@ -53,7 +53,32 @@ python /sc/hydra/work/rodrio10/software/in_github/TR-DP-algorithm/pacMonStr_V1.p
   genotype_trs/${sample}/${sample}.trs  
 ```
 
-## Step 4. Compare TRs against controls
+## Step 4. Collapse output from TRs
 ```
-bedtools intersect -b repeats.bed -a controls.bed >> get_copies_from_other_samples.txt
+# input arguments
+# 1. Repeats that were genotyped
+# 2. Haplotype 1 genotyped TRs
+# 3. Haplotype 2 genotyped TRs
+# 4. Yes or No; Filter TRs based on alignment scores
+# 5. Float from 0 to 1. The alignment score to fitler on
+python /sc/hydra/work/rodrio10/software/in_github/tr/python/merge_trs_from_phased_reads_from_controls.py \
+  repeats.bed \
+  extract_sequence/${sample}/${sample}.trs \
+  extract_sequence/${sample}/${sample}.trs \
+  No \
+  .8 
+```
+
+## Step 5. Get Z-scores 
+```
+sample=
+python /sc/hydra/work/rodrio10/projects/TRs/Famalial_ataxia_cases/bin/python/calculate_zscore_against_control.py \
+  controls.bed \
+  genotype_trs/${sample}/${sample}.trs.all > \
+  compute_z_scores/${sample}.bed
+```
+
+## Step 6. Compare TRs against controls
+```
+bedtools intersect -b genotype_trs/${sample}/${sample}.trs.all -a controls.bed >> get_copies_from_other_samples.txt
 ```
