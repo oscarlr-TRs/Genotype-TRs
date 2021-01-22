@@ -1,3 +1,7 @@
+# Deprecated repo
+Don't use repo! There is code and a pipeline that is much easier to use.
+Look at https://github.com/oscarlr-TRs/PacMonSTR and https://github.com/oscarlr-TRs/PacMonSTR-merge
+
 # Genotype-TRs
 Genotyping TRs using MsPAC and PacMonSTR
 
